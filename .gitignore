@@ -8,3 +8,4 @@ target
 .idea
 .DS_Store
 *.iml
+BUILD_ARCHTYPE.adoc

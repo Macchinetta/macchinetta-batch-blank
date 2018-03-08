@@ -68,7 +68,7 @@ def doc = new XmlSlurper(false, false).parse(orgPath.toFile())
 
 doc.with {
     // replace blank project to archetype.
-    groupId = 'jp.co.ntt.fw.macchinetta.batch'
+    groupId = 'com.github.macchinetta.blank'
     artifactId = 'macchinetta-batch-archetype'
     name = 'macchinetta-batch-archetype'
     description = 'Archetype project for Macchinetta Batch Framework (2.x)'
@@ -88,15 +88,15 @@ doc.appendNode {
         }
         developers {
             developer {
-                name 'NTT'
-                organization 'NTT Corporation'
+                name 'Macchinetta'
+                organization 'Macchinetta'
                 organizationUrl 'https://macchinetta.github.io/'
             }
         }
         scm {
-            connection 'scm:git:git@github.com:Macchinetta/batch-sample.git'
-            developerConnection 'scm:git:git@github.com:Macchinetta/batch-sample.git'
-            url 'scm:git:git@github.com:Macchinetta/batch-sample.git'
+            connection 'scm:git:git@github.com:Macchinetta/macchinetta-batch-blank.git'
+            developerConnection 'scm:git:git@github.com:Macchinetta/macchinetta-batch-blank.git'
+            url 'scm:git:git@github.com:Macchinetta/macchinetta-batch-blank'
         }
         repositories {
             repository {
@@ -108,30 +108,8 @@ doc.appendNode {
                 url 'http://repo1.maven.org/maven2/'
             }
 
-            repository {
-                releases {
-                    enabled 'false'
-                }
-                snapshots {
-                    enabled 'true'
-                }
-                id 'macchinetta-batch-snapshots'
-                url 'http://repo.macchinetta.org/nexus/content/repositories/macchinetta-batch-snapshots/'
-            }
         }
         profiles {
-            profile {
-                id 'default'
-                activation {
-                    activeByDefault 'true'
-                }
-                distributionManagement {
-                    snapshotRepository {
-                        id 'macchinetta-batch-snapshots'
-                        url 'http://repo.macchinetta.org/nexus/content/repositories/macchinetta-batch-snapshots/'
-                    }
-                }
-            }
             profile {
                 id 'central'
                 distributionManagement {
