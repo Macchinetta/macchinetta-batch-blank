@@ -21,7 +21,7 @@ Set the groupId, artifactId, version and package to suit your project.
 C:\xxx>mvn archetype:generate ^
   -DarchetypeGroupId=jp.co.ntt.fw.macchinetta.batch ^
   -DarchetypeArtifactId=macchinetta-batch-archetype ^
-  -DarchetypeVersion=2.0.0.RELEASE
+  -DarchetypeVersion=2.0.1.RELEASE
 ----
 
 * for Bash
@@ -31,7 +31,7 @@ C:\xxx>mvn archetype:generate ^
 $ mvn archetype:generate \
   -DarchetypeGroupId=jp.co.ntt.fw.macchinetta.batch \
   -DarchetypeArtifactId=macchinetta-batch-archetype \
-  -DarchetypeVersion=2.0.0.RELEASE
+  -DarchetypeVersion=2.0.1.RELEASE
 ----
 
 == Run
