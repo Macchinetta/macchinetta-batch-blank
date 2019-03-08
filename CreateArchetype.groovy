@@ -111,6 +111,12 @@ doc.appendNode {
         }
         profiles {
             profile {
+                id 'default'
+                activation {
+                    activeByDefault 'true'
+                }
+            }
+            profile {
                 id 'central'
                 distributionManagement {
                     repository {

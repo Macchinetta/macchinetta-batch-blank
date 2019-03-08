@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>xxxxxx.yyyyyy.zzzzzz</groupId>
     <artifactId>projectName</artifactId>
-    <version>2.0.1.RELEASE</version>
+    <version>2.1.0.RELEASE</version>
 
     <name>Macchinetta Batch Framework (2.x) Blank Project</name>
     <description>Batch Blank Project using Macchinetta Batch Framework (2.x)</description>
@@ -38,24 +38,15 @@
         <jdk.version>1.8</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <io.spring.platform.version>Brussels-SR5</io.spring.platform.version>
-        <spring-framework-bom.version>4.3.14.RELEASE</spring-framework-bom.version>
-        <terasoluna-batch.version>5.1.1.RELEASE</terasoluna-batch.version>
+        <io.spring.platform.version>Cairo-SR3</io.spring.platform.version>
+        <terasoluna-batch.version>5.2.0.RC1</terasoluna-batch.version>
 
-        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
-        <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-framework-bom</artifactId>
-                <version>${spring-framework-bom.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
             <dependency>
                 <groupId>io.spring.platform</groupId>
                 <artifactId>platform-bom</artifactId>

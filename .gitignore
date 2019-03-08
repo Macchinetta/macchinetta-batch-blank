@@ -8,4 +8,5 @@ target
 .idea
 .DS_Store
 *.iml
-BUILD_ARCHTYPE.adoc
+BUILD_ARCHETYPE.adoc
+source.sh
