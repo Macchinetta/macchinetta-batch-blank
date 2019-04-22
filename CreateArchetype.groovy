@@ -96,7 +96,7 @@ doc.appendNode {
         scm {
             connection 'scm:git:git@github.com:Macchinetta/macchinetta-batch-blank.git'
             developerConnection 'scm:git:git@github.com:Macchinetta/macchinetta-batch-blank.git'
-            url 'scm:git:git@github.com:Macchinetta/macchinetta-batch-blank'
+            url 'scm:git:git@github.com:Macchinetta/macchinetta-batch-blank.git'
         }
         repositories {
             repository {
@@ -111,15 +111,17 @@ doc.appendNode {
         }
         profiles {
             profile {
+                id 'default'
+                activation {
+                    activeByDefault 'true'
+                }
+            }
+            profile {
                 id 'central'
                 distributionManagement {
                     repository {
                         id 'ossrh'
                         url 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
-                    }
-                    snapshotRepository {
-                        id 'ossrh'
-                        url 'https://oss.sonatype.org/content/repositories/snapshots'
                     }
                 }
                 build {
