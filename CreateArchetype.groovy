@@ -83,20 +83,20 @@ doc.appendNode {
         url 'https://macchinetta.github.io/'
         inceptionYear '2017'
         organization {
-            name 'macchinetta.jp.co.ntt.fw'
+            name 'macchinetta.com.github'
             url 'https://macchinetta.github.io/'
         }
         developers {
             developer {
-                name 'Macchinetta'
-                organization 'Macchinetta'
+                name 'NTT'
+                organization 'NTT Corporation'
                 organizationUrl 'https://macchinetta.github.io/'
             }
         }
         scm {
-            connection 'scm:git:git@github.com:Macchinetta/macchinetta-batch-blank.git'
-            developerConnection 'scm:git:git@github.com:Macchinetta/macchinetta-batch-blank.git'
-            url 'scm:git:git@github.com:Macchinetta/macchinetta-batch-blank'
+            connection 'scm:git:git@github.com:Macchinetta/batch-sample.git'
+            developerConnection 'scm:git:git@github.com:Macchinetta/batch-sample.git'
+            url 'scm:git:git@github.com:Macchinetta/batch-sample.git'
         }
         repositories {
             repository {
@@ -105,7 +105,7 @@ doc.appendNode {
                 }
                 id 'central'
                 name 'Maven Central repository'
-                url 'http://repo1.maven.org/maven2/'
+                url 'https://repo1.maven.org/maven2/'
             }
 
         }
@@ -122,10 +122,6 @@ doc.appendNode {
                     repository {
                         id 'ossrh'
                         url 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
-                    }
-                    snapshotRepository {
-                        id 'ossrh'
-                        url 'https://oss.sonatype.org/content/repositories/snapshots'
                     }
                 }
                 build {

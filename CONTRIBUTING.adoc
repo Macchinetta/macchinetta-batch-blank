@@ -9,7 +9,7 @@ Contribution procedures are follows:
 
 == Create a new issue
 
-Please create a new issue from https://github.com/Macchinetta/batch-sample/issues/new[here] for contributing(bug report, improvement or new content), and get an issue number(tracking id).
+Please create a new issue from https://github.com/Macchinetta/macchinetta-batch-blank/issues/new[here] for contributing(bug report, improvement or new content), and get an issue number(tracking id).
 
 [NOTE]
 .Supported language
@@ -56,7 +56,7 @@ e.g.)
 
 [source, text]
 ----
-$ git clone https://github.com/Macchinetta/{your account}/batch-sample.git
+$ git clone https://github.com/{your account}/macchinetta-batch-blank.git
 ----
 
 == Create a work branch
