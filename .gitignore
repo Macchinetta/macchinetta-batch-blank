@@ -10,3 +10,6 @@ target
 *.iml
 BUILD_ARCHETYPE.adoc
 source.sh
+*.doc*
+*.ppt*
+*.xls*
