@@ -157,10 +157,10 @@ doc.appendNode {
             }
         }
         properties {
-            'maven-gpg-plugin.version' '1.6'
+            'maven-gpg-plugin.version' '3.0.1'
             'nexus-staging-maven-plugin.version' '1.6.8'
-            'archetype-packaging.version' '2.4'
-            'maven-archetype-plugin.version' '2.4'
+            'archetype-packaging.version' '3.2.0'
+            'maven-archetype-plugin.version' '3.2.0'
         }
 }
 
@@ -173,39 +173,6 @@ Files.delete(orgPath)
 
 println "### Ph-3. re-create empty pom's tag."
 
-static void appendNode(Document doc, String nodeName) {
-    findPropertiesNode(doc).appendChild doc.createElement(nodeName)
-}
-
-static boolean alreadyExistsNode(Document doc, String nodeName) {
-    findPropertiesNode(doc).getElementsByTagName(nodeName).length > 0
-}
-
-static Element findPropertiesNode(Document doc) {
-    Element node = (Element) findIncludeSettingsNode(doc)
-            ?.getElementsByTagName('properties')
-            ?.item(0)
-    if (node == null) {
-        throw new IllegalArgumentException("Can not find properties node.")
-    }
-    return node
-}
-
-static Element findIncludeSettingsNode(Document doc) {
-    NodeList nodeList = doc.getElementsByTagName('profile')
-    for (int i = 0; i < nodeList.length; i++) {
-        Element node = (Element) nodeList.item(i)
-        if (node.getElementsByTagName('id')
-                .item(0)
-                .getChildNodes()
-                .item(0)
-                .nodeValue == 'IncludeSettings') {
-            return node
-        }
-    }
-    throw new IllegalArgumentException("Can not find IncludeSettings node.")
-}
-
 static void outputXML(File f, Document doc) {
     def out = new ByteArrayOutputStream()
     TransformerFactory.newInstance().newTransformer()
@@ -214,8 +181,6 @@ static void outputXML(File f, Document doc) {
     def xml = out.toString("UTF-8")
             .replaceFirst('(<project xmlns)',
             '\r\n$1')
-            .replaceFirst('<(exclude-property)/><(exclude-log)/>',
-            '    <$1/>\r\n                <$2/>\r\n            ')
 
     new FileWriter(f).withWriter { w ->
         w.write(xml)
@@ -230,14 +195,6 @@ Files.move(projectPom, orgProjectPom)
 
 Document projectDoc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
         .parse orgProjectPom.toFile()
-
-if (!alreadyExistsNode(projectDoc, 'exclude-property')) {
-    appendNode projectDoc, 'exclude-property'
-}
-
-if (!alreadyExistsNode(projectDoc, 'exclude-log')) {
-    appendNode projectDoc, 'exclude-log'
-}
 
 outputXML projectPom.toFile(), projectDoc
 
