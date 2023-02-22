@@ -1,7 +1,5 @@
 import groovy.xml.XmlUtil
 import org.w3c.dom.Document
-import org.w3c.dom.Element
-import org.w3c.dom.NodeList
 
 import javax.xml.parsers.DocumentBuilderFactory
 import javax.xml.transform.TransformerFactory
@@ -19,6 +17,17 @@ final def OLD_PACKAGE = 'xxxxxx/yyyyyy/zzzzzz/'
 def rootDir = new File(ROOT_DIR)
 def archetypeDir = new File(rootDir, ARCHETYPE_DIR)
 def projectDir = new File(archetypeDir, PROJECT_DIR)
+
+def ARTIFACT_ID = 'macchinetta-batch-archetype'
+def NAME = 'macchinetta-batch-archetype'
+
+if (args.length != 0 && 'xmlconfig'.equals(args[0])) {
+    ARTIFACT_ID = 'macchinetta-batch-xmlconfig-archetype'
+    NAME = 'macchinetta-batch-xmlconfig-archetype'
+    println '### Create archetype (XML Config).'
+} else {
+    println '### Create archetype (Java Config).'
+}
 
 if (!projectDir.exists() || !projectDir.directory) {
     println '** do not build archetype project yet.'
@@ -69,8 +78,8 @@ def doc = new XmlSlurper(false, false).parse(orgPath.toFile())
 doc.with {
     // replace blank project to archetype.
     groupId = 'com.github.macchinetta.blank'
-    artifactId = 'macchinetta-batch-archetype'
-    name = 'macchinetta-batch-archetype'
+    artifactId = ARTIFACT_ID
+    name = NAME
     description = 'Archetype project for Macchinetta Batch Framework (2.x)'
     build.with {
         extensions.extension.version = '${archetype-packaging.version}'
@@ -158,7 +167,7 @@ doc.appendNode {
         }
         properties {
             'maven-gpg-plugin.version' '3.0.1'
-            'nexus-staging-maven-plugin.version' '1.6.8'
+            'nexus-staging-maven-plugin.version' '1.6.13'
             'archetype-packaging.version' '3.2.0'
             'maven-archetype-plugin.version' '3.2.0'
         }
