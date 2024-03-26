@@ -1,0 +1,42 @@
+= Macchinetta Batch 2.x archetype ビルド手順
+
+== ビルド環境
+
+* OpenJDK8
+* Maven 3.8.3
+* groovy 2.4.7
+
+上記の実行ファイルへのパスを設定しておく。
+
+== ビルド手順
+
+[cols="30,30,40", option="headers"]
+.環境変数
+|===
+|変数名
+|値
+|内容
+
+.2+|BUILD_TARGET
+|install
+|ローカルリポジトリへインストール
+
+|deploy
+|Maven Centralへデプロイ
+
+|===
+
+環境変数を設定して、以下のコマンドを実行する。
+
+[source,sh]
+.ビルド手順
+----
+export BUILD_TARGET=install
+
+pushd macchinetta-batch-blankproject
+mvn clean archetype:create-from-project -DpackageName=xxxxxx.yyyyyy.zzzzzz.projectName
+pushd
+groovy CreateArchetype.groovy
+pushd macchinetta-batch-blankproject/target/generated-sources/archetype
+mvn clean ${BUILD_TARGET} -DallowSnapshot=false
+----
