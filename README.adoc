@@ -22,7 +22,7 @@ Set the groupId, artifactId, version and package to suit your project.
 C:\xxx>mvn archetype:generate ^
   -DarchetypeGroupId=com.github.macchinetta.blank ^
   -DarchetypeArtifactId=macchinetta-batch-archetype ^
-  -DarchetypeVersion=2.5.0.1.RELEASE
+  -DarchetypeVersion=2.6.0.RELEASE
 ----
 
 * for Bash(Unix, Linux, ...)
@@ -32,7 +32,7 @@ C:\xxx>mvn archetype:generate ^
 $ mvn archetype:generate \
   -DarchetypeGroupId=com.github.macchinetta.blank \
   -DarchetypeArtifactId=macchinetta-batch-archetype \
-  -DarchetypeVersion=2.5.0.1.RELEASE
+  -DarchetypeVersion=2.6.0.RELEASE
 ----
 ==== For XML Config
 * for CommandPrompt(Windows)
@@ -42,7 +42,7 @@ $ mvn archetype:generate \
 C:\xxx>mvn archetype:generate ^
   -DarchetypeGroupId=com.github.macchinetta.blank ^
   -DarchetypeArtifactId=macchinetta-batch-xmlconfig-archetype ^
-  -DarchetypeVersion=2.5.0.1.RELEASE
+  -DarchetypeVersion=2.6.0.RELEASE
 ----
 
 * for Bash(Unix, Linux, ...)
@@ -52,7 +52,7 @@ C:\xxx>mvn archetype:generate ^
 $ mvn archetype:generate \
   -DarchetypeGroupId=com.github.macchinetta.blank \
   -DarchetypeArtifactId=macchinetta-batch-xmlconfig-archetype \
-  -DarchetypeVersion=2.5.0.1.RELEASE
+  -DarchetypeVersion=2.6.0.RELEASE
 ----
 
 == Run
